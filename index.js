@@ -3,11 +3,14 @@ require('dotenv').config();
 
 
 
-//Api connection
-
-async function connection() {
-    await app.listen(process.env.PORT);
-    console.log('Server connect in the port:', process.env.PORT);
+//Api Connection
+async function connection (){
+  await app.listen(process.env.PORT);
+  console.log('Server is running on port:', process.env.PORT);
 }
 
+
+
 connection();
+
+

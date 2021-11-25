@@ -1,11 +1,11 @@
 const express = require('express');
-const app = express();
 const morgan = require('morgan');
 const bodyParse = require('body-parser');
+const app = express();
 
 //Middleware
 app.use(bodyParse.json());
-app.use(morgan('dev'))
+app.use(morgan('dev'));
 app.use(require('./src/routes/products.routes'));
 
 //Routes
