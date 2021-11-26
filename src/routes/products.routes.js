@@ -7,6 +7,12 @@ router.get('/', async(req,res) =>{
     res.send(getProduct);
 });
 
+router.get('/:id', async(req,res)=>{
+    const idParamer = req.params.id;
+    const getProductById = await db.query('CALL sp_GetProductsById(?)', [idParamer]);
+    res.send(getProductById);
+})
+
 router.post('/', async(req,res) =>{
     const {nombre,categoria,precio} = req.body;
     const newProduct ={
